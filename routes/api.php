@@ -1,0 +1,58 @@
+<?php
+
+use App\Http\Controllers\Api\MessageController;
+use App\Http\Controllers\Api\ReferenceController;
+use App\Http\Controllers\Api\ResumeController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\APIController;
+use App\Http\Controllers\Api\DashboardController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\TypeController;
+use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\BannerController;
+
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
+Route::post('/signup', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+Route::get('/dashboard', [DashboardController::class, 'dashboardInfo'])->middleware('auth:sanctum');
+Route::get('/categories', [CategoryController::class, 'index'])->middleware('auth:sanctum');
+Route::post('/categories/add', [CategoryController::class, 'store_category'])->middleware('auth:sanctum');
+Route::get('/categories/{category}', [CategoryController::class, 'show'])->middleware('auth:sanctum');
+Route::put('/categories/{category}', [CategoryController::class, 'update_category'])->middleware('auth:sanctum');
+Route::delete('/categories/{category}', [CategoryController::class, 'delete_category'])->middleware('auth:sanctum');
+Route::get('/products', [ProductController::class, 'index_products'])->middleware('auth:sanctum');
+Route::post('/products/add', [ProductController::class, 'store_product'])->middleware('auth:sanctum');
+Route::get('/products/{product}', [ProductController::class, 'show_product'])->middleware('auth:sanctum');
+Route::put('/products/{product}', [ProductController::class, 'update_product'])->middleware('auth:sanctum');
+Route::delete('/products/{product}', [ProductController::class, 'delete_product'])->middleware('auth:sanctum');
+Route::post('/types/add', [TypeController::class, 'store_type'])->middleware('auth:sanctum');
+Route::get('/types', [TypeController::class, 'index_types'])->middleware('auth:sanctum');
+Route::delete('/types/{type}', [TypeController::class, 'delete_type'])->middleware('auth:sanctum');
+Route::get('/contacts', [ContactController::class, 'index_contacts'])->middleware('auth:sanctum');
+Route::post('/contacts/add', [ContactController::class, 'store_contact'])->middleware('auth:sanctum');
+Route::get('/contacts/{contact}', [ContactController::class, 'show_contact'])->middleware('auth:sanctum');
+Route::put('/contacts/{contact}', [ContactController::class, 'update_contact'])->middleware('auth:sanctum');
+Route::delete('contacts/{contact}', [ContactController::class, 'delete_contact'])->middleware('auth:sanctum');
+Route::get('/banners', [BannerController::class, 'index_banners'])->middleware('auth:sanctum');
+Route::post('/banners/add', [BannerController::class, 'store_banner'])->middleware('auth:sanctum');
+Route::get('/banners/{banner}', [BannerController::class, 'show_banner'])->middleware('auth:sanctum');
+Route::put('/banners/{banner}', [BannerController::class, 'update_banner'])->middleware('auth:sanctum');
+Route::delete('/banners/{banner}', [BannerController::class, 'delete_banner'])->middleware('auth:sanctum');
+Route::get('/messages', [MessageController::class, 'index_messages'])->middleware('auth:sanctum');
+//Route::get('/types/try', [TypeController::class, 'try']);
+Route::get('/references', [ReferenceController::class, 'index'])->middleware('auth:sanctum');
+Route::get('/references/{reference}' , [ReferenceController::class, 'show'])->middleware('auth:sanctum');
+Route::post('/references/add', [ReferenceController::class, 'store'])->middleware('auth:sanctum');
+Route::put('/references/{reference}', [ReferenceController::class, 'update'])->middleware('auth:sanctum');
+Route::delete('/references/{reference}', [ReferenceController::class, 'destroy'])->middleware('auth:sanctum');
+Route::post('/resumes/add', [ResumeController::class, 'store'])->middleware('auth:sanctum');
+Route::get('/resumes', [ResumeController::class, 'index'])->middleware('auth:sanctum');
+Route::get('/resumes/{resume}', [ResumeController::class, 'show'])->middleware('auth:sanctum');
+Route::put('/resumes/{resume}', [ResumeController::class, 'update'])->middleware('auth:sanctum');
+Route::delete('/resumes/{resume}', [ResumeController::class, 'destroy'])->middleware('auth:sanctum');
