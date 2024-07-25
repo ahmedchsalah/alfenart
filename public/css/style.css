@@ -120,21 +120,25 @@ header {
 }
 header .logo {
   width: 100%;
-  padding: 50px 0;
+  padding: 30px 0;
   text-align: center;
   transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
+header .logo a{
+    width: 80%;
+}
 @media (max-width: 1459px) {
   header .logo {
-    padding: 30px 0;
+    padding: 20px 0;
   }
 }
 header .logo a img {
   max-width: 100%;
   height: auto;
+    transform: scale(0.75);
 }
 header a.open-menu-toggle {
   display: none;

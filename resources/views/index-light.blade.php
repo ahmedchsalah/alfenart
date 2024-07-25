@@ -11,6 +11,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
+    <link rel="icon" href="{{asset('/images/favicon.png')}}" type="image/png">
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100;300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -40,7 +42,7 @@
 	<div class="ip-header">
 
 		<p class="ip-logo">
-			<img src="images/logo-white.png" alt="">
+			<img src="{{asset('/images/logo-alfenart.png')}}" alt="">
 		</p>
 
 		<div class="ip-loader">
@@ -60,7 +62,7 @@
 		<header class="clearfix">
 
 			<div class="logo">
-				<a href="index.blade.php"><img src="{{asset('/images/logo-white.png')}}" alt=""></a>
+				<a href="#"><img src="{{asset('/images/logo-alfenart.png')}}" alt=""></a>
 			</div>
 
 			<a class="open-menu-toggle" href="#">
