@@ -468,13 +468,13 @@
                             <div class="col-sm-6">
                                 <ul class="social-list">
                                     <li>
-                                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                        <a href="{{env('FACEBOOK_LINK', '#')}}"><i class="fab fa-facebook-square"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="{{env('INSTAGRAM_LINK', '#')}}"><i class="fab fa-instagram"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                                        <a href="{{env('LINKEDIN_LINK','#')}}"><i class="fab fa-linkedin"></i></a>
                                     </li>
                                 </ul>
                             </div>
